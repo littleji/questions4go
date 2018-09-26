@@ -1,2 +1,4 @@
-# questions4go
-a bunch of Golang questions
+ questions4go
+ ---
+# 1-make与new有什么区别?
+
