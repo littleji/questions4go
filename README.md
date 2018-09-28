@@ -7,6 +7,11 @@ questions focus on Golang itself，rather than algorithm and so on。
 # 3-运行go install 会发生什么？
 
 # 4-一个标准的 Golang 工程的目录结构是怎样的？
+<details>
+	<summary>answer</summary>
+	like this https://github.com/golang-standards/project-layout
+</details>
+	
 
 # 5-Golang 中的 package 命名有什么原则？
 
