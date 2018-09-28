@@ -61,3 +61,14 @@ i is: 5, and j is: 2
 i is: 5, and j is: 3
   </pre>
 </details>
+
+# 7-Golang 中的如何打印一个 Unicode 字符串中的每一个子？
+
+<details>
+  <summary>answer</summary>
+<pre>
+	for pos, value := range "我是中国人" {
+		fmt.Printf("val:%#U, pos:%d", value, pos)
+	}
+</pre>
+</details>
