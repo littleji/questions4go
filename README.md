@@ -25,7 +25,7 @@ LABEL1:
     for i := 0; i <= 5; i++ {
         for j := 0; j <= 5; j++ {
             if j == 4 {
-                continue LABEL1
+                continue LABEL1 //其执行效果相当于是 break
             }
             fmt.Printf("i is: %d, and j is: %d\n", i, j)
         }
@@ -35,7 +35,7 @@ LABEL1:
   </pre>
   本段代码中，continue将会指向 LABEL1 而不是继续,演示效果如下所示：
   <pre>
-  i is: 0, and j is: 0
+i is: 0, and j is: 0
 i is: 0, and j is: 1
 i is: 0, and j is: 2
 i is: 0, and j is: 3
