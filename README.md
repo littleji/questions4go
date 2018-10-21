@@ -1,4 +1,5 @@
-questions focus on Golang itself，rather than algorithm and so on。
+questions focus on Golang itself，rather than algorithm and so on。If this repo gives you any sort of help,pleasee push the :star: button,thanks.
+如果给你了些启发,请打:star:，谢谢。
 
 # 1-make与new有什么区别?
 
