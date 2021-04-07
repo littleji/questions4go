@@ -137,12 +137,19 @@ var s string = ""
 # 11-嵌入式链表输入在golang中表达?
 <details>
   <summary>answer</summary>
-
 <pre>
 介入式链表的存在主要时为了克服,在C语言链表中出现的将数据定义在strut中.
 golang 中的实现,首先定义一个基础的可索引的interface,并定义一个链表struct "List"
 该List 实现上面索引interface,并添加对应的链表方法
 最终将之前的预定义的结构体中,使用匿名嵌套结构体的方式包含该List结构体即可
 详见:https://sheepbao.github.io/post/golang_list/
+</details>
+
+# 12-Rune为什么使用的是int32而不是uint32
+<details>
+  <summary>answer</summary>
+<pre>
+核心原因是有符号位的数字可以比较有效的检测overflow等问题
+详见:https://stackoverflow.com/questions/24714665/why-is-rune-in-golang-an-alias-for-int32-and-not-uint32?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 </details>
 
