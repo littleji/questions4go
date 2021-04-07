@@ -125,7 +125,6 @@ var _ io.Writer = (*bytes.Buffer)(nil)
 # 10-写出四种初始化一个空字符串的方式
 <details>
   <summary>answer</summary>
-
 <pre>
 s := ""
 var s string
@@ -133,11 +132,11 @@ var s = ""
 var s string = ""
 </pre>
 第一种形式，是一条短变量声明，最简洁，但只能用在函数内部，而不能用于包变量。第二种形式依赖于字符串的默认初始化零值机制，被初始化为""。第三种形式用得很少，除非同时声明多个变量。第四种形式显式地标明变量的类型，当变量类型与初值类型相同时，类型冗余，但如果两者类型不同，变量类型就必须了。实践中一般使用前两种形式中的某个，初始值重要的话就显式地指定变量的类型，否则使用隐式初始化。
+</details>
 
 # 11-嵌入式链表输入在golang中表达?
 <details>
   <summary>answer</summary>
-<pre>
 介入式链表的存在主要时为了克服,在C语言链表中出现的将数据定义在strut中.
 golang 中的实现,首先定义一个基础的可索引的interface,并定义一个链表struct "List"
 该List 实现上面索引interface,并添加对应的链表方法
@@ -148,8 +147,27 @@ golang 中的实现,首先定义一个基础的可索引的interface,并定义�
 # 12-Rune为什么使用的是int32而不是uint32
 <details>
   <summary>answer</summary>
-<pre>
 核心原因是有符号位的数字可以比较有效的检测overflow等问题
 详见:https://stackoverflow.com/questions/24714665/why-is-rune-in-golang-an-alias-for-int32-and-not-uint32?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+</details>
+
+# 13-为什么推荐优先使用float64而不是float32?
+<details>
+  <summary>answer</summary>
+float32可以提供约6个整数的精度,float64可以提供约15个整数的精度.
+选择float64可以减少float32带来的累积误差.
+</details>
+	
+# 14-有字符串s,则a=len(s)与b=utf8.RuneCountInString(s)有什么不同?
+<details>
+  <summary>answer</summary>
+
+len(s)返回的是字节数,后者返回的实际unicode字符个数,b<=a.
+比如
+<pre>
+s := "Hello, 世界"
+fmt.Println(len(s)) // "13"
+fmt.Println(utf8.RuneCountInString(s)) // "9
+	</pre>
 </details>
 
